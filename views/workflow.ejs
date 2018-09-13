@@ -1,0 +1,37 @@
+<%include ./partials/wheader %>
+
+<div class="ui main container">
+
+    <div class="ui huge header"><center>Queue Contents</center></div>
+    <table class="ui selectable inverted striped table" >
+            <thead>
+                <tr>
+                <th>Type</th>
+                <th>Project</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% workflows.forEach(function(workflow) {%>
+                    <%workflow.stages.forEach(function(stage){%>    
+                        <tr onclick="window.location='workflow/new'">
+                            <td><%=stage.stageType%></td>
+                            <td><%=stage.project%></td>
+                            <td><%=stage.description%></td>
+                            <td><%=stage.dueDate.toDateString()%></td>
+                        </tr>
+                    <% }) %>
+                <% }) %>
+            </tbody>
+        </table>
+</div>
+        
+
+
+            
+            
+    
+
+
+<%include ./partials/footer %>

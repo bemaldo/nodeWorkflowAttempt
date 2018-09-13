@@ -1,0 +1,70 @@
+<html >
+	<head>
+		<title> Workflow + + </title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <script type="text/javascript" src="/javascripts/workflowManipulation.js"></script>
+
+</head>
+	<body onload="addStage()">
+		<%include ./partials/navigation%>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Workflow</div>
+        <form class="ui form"  ><!-- start form-->
+            <div class="field">
+                <label>Title</label>
+                <input type="text"  placeholder="title" id="workflowTitle">
+            </div>
+            
+            <div class="field">
+                <label>Description</label>
+                <input type="text"  placeholder="Description" id="workflowDescription">
+            </div>
+            <div class="field">
+                <label>Workflow Document</label>
+                <input type="file" id="document" accept=".doc,pdf">
+            </div>
+            
+            <div class="field" id="stagesContainer" >
+                
+                <label>Stages</label>
+                <!-- new stages will be added here dynamically with javascript -->
+                
+
+            </div>
+
+            <div class="field">
+
+                    <div class="ui checkbox">
+                            <input name="workflow[saveTemplate]" type="checkbox" id="saveTemplateCheckBox">
+                            <label>Save as Template</label>
+                    </div>
+            </div>
+        
+            <div class="ui equal width center aligned grid">
+                <div class="row" >
+                    <div class="column">
+                        <div class="fluid ui large buttons">
+                            <button class="ui positive button" type="button" onclick="processRequest()">Submit</button>
+                            <!--<div class="or"></div>-->
+                            <button class="ui negative button" type="button" onclick="redirectHome()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+
+        </form> <!-- end form -->
+    </div>
+
+    
+    
+</div>
+
+<%include ./partials/footer %>
+
+
+
+<!-- divider:   <div class="ui divider"></div>-->
